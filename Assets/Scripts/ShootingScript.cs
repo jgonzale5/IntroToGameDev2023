@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    //The key the player needs to press for shooting
+    //public KeyCode shootKey;
+    public string shootButton;
+
     //The projectile that we'll be shooting
     public Transform projectile;
     //How many seconds pass between each shot
     public float fireRate;
     //An internal counter used to keep track of time passed between shots
     float fireCooldown = 0;
+
+    private void Start()
+    {
+        //Set the cooldown to the rate so we can start shooting from frame 1
+        fireCooldown = fireRate;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,7 +28,10 @@ public class ShootingScript : MonoBehaviour
         fireCooldown += Time.deltaTime;
 
         //If the cooldown has reached the rate
-        if (fireCooldown >= fireRate)
+        if (fireCooldown >= fireRate 
+            //&& Input.GetButton(shootButton))
+            && Input.GetButtonDown(shootButton))
+            //&& Input.GetButtonUp(shootButton))
         {
             //Call the Shoot function 
             Shoot();

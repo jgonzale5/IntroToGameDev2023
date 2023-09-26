@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RandomRingSpawning : MonoBehaviour
 {
+    //The prefab with the ring that will be instantiated
+    public Transform ringPrefab;
+
     //Defining an array to hold the possible spawn points
     public GameObject[] spawnPoints = new GameObject[6];
     //The seconds between the instantiation of each ting
@@ -23,6 +26,11 @@ public class RandomRingSpawning : MonoBehaviour
             int randomIndex = Random.Range(0, spawnPoints.Length);
             //Spawn something
             Debug.Log("Spawning ring at " + spawnPoints[randomIndex].name);
+            
+            //Spawn the ring prefab at the position of the randomly selected 
+            //spawn point, with the rotation of said spawn point
+            Instantiate(ringPrefab, spawnPoints[randomIndex].transform.position,
+                spawnPoints[randomIndex].transform.rotation);
 
             //The counter is reset
             spawnCounter = 0.0f;
