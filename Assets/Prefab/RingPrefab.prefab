@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7558862841741745852}
   - component: {fileID: 7558862841741745853}
+  - component: {fileID: 1966795334371374572}
+  - component: {fileID: 7585404741270612280}
   m_Layer: 0
   m_Name: RingPrefab
   m_TagString: Untagged
@@ -46,7 +48,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -25
-  lifetime: 5
+  lifetime: 10
+--- !u!114 &1966795334371374572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558862841741745730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5663ca009bd0c504ca844c19b276c9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7585404741270612280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558862841741745730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0.2}
 --- !u!1001 &7558862842252155121
 PrefabInstance:
   m_ObjectHideFlags: 0

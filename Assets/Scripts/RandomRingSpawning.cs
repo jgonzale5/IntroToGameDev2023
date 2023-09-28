@@ -14,6 +14,13 @@ public class RandomRingSpawning : MonoBehaviour
     //A counter used to keep track of the time between ring instantiations
     private float spawnCounter = 0.0f;
 
+    private void Start()
+    {
+        //We start with the counter equal to the rate so rings start spawning
+        //right away
+        spawnCounter = spawnRate;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +32,7 @@ public class RandomRingSpawning : MonoBehaviour
         {
             int randomIndex = Random.Range(0, spawnPoints.Length);
             //Spawn something
-            Debug.Log("Spawning ring at " + spawnPoints[randomIndex].name);
+            //Debug.Log("Spawning ring at " + spawnPoints[randomIndex].name);
             
             //Spawn the ring prefab at the position of the randomly selected 
             //spawn point, with the rotation of said spawn point
