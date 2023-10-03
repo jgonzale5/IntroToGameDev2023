@@ -29,8 +29,12 @@ public class ShootingScript : MonoBehaviour
 
         //If the cooldown has reached the rate
         if (fireCooldown >= fireRate 
-            //&& Input.GetButton(shootButton))
+            //If the game is not paused
+            && PauseMenuScript.isPaused == false
+            //&& !PauseMenuScript.isPaused
+            //If the player is pressing the shoot button
             && Input.GetButtonDown(shootButton))
+            //&& Input.GetButton(shootButton))
             //&& Input.GetButtonUp(shootButton))
         {
             //Call the Shoot function 
