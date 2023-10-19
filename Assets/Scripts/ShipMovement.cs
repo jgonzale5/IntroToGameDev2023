@@ -13,6 +13,14 @@ public class ShipMovement : MonoBehaviour
     [Tooltip("The speed of the player in X and Y")]
     public float speed;
 
+    [Header("Animations")]
+    //The animator that controls the ship animations
+    public Animator animator;
+    //The parameter that controls the animations in X
+    public string XAnimParam;
+    //The parameter that controls the animations in Y
+    public string YAnimParam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +51,11 @@ public class ShipMovement : MonoBehaviour
         //We store the player input
         xMov = Input.GetAxis("Horizontal");
         yMov = Input.GetAxis("Vertical");
+
+        //Forward the value of xMov and yMov to the animator. It will know
+        //where to go from there.
+        animator.SetFloat(XAnimParam, xMov);
+        animator.SetFloat(YAnimParam, yMov);
 
         //We declare a variable with the motion the player is making
         //                           v Horizontal direction

@@ -42,6 +42,16 @@ public class ScoreRingScript : MonoBehaviour
         //If the other object has the scoring tag, this object is destroyed
         if (other.CompareTag(scoringTag))
         {
+            //Go to the game object of the collider this object collided with
+            //Try to get the component ShipAnimation from it
+            //If it has it, put it in the anim ShipAnimation variable, if it doesn't we
+            //skip the rest of the if statement.
+            if (other.gameObject.TryGetComponent<ShipAnimation>(out ShipAnimation anim))
+            {
+                Debug.Log(other.gameObject.name);
+                anim.Spin();
+            }
+
             //Add 10 points to score manager, which will display the new score
             ScoreManager.Instance.AddScore(10);
 
