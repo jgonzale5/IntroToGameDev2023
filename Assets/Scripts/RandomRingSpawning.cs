@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomRingSpawning : MonoBehaviour
 {
     //The prefab with the ring that will be instantiated
-    public Transform ringPrefab;
+    public Transform[] ringPrefabs = new Transform[0];
 
     //Defining an array to hold the possible spawn points
     public GameObject[] spawnPoints = new GameObject[6];
@@ -33,7 +33,13 @@ public class RandomRingSpawning : MonoBehaviour
             int randomIndex = Random.Range(0, spawnPoints.Length);
             //Spawn something
             //Debug.Log("Spawning ring at " + spawnPoints[randomIndex].name);
-            
+
+            //int random = Random.Range(0, int.MaxValue) % ringPrefabs.Length;
+
+            //Generate a random number within the boundaries of the ringPrefabs
+            //index and assign it to a trasform to instantiate it.
+            Transform ringPrefab = ringPrefabs[Random.Range(0, ringPrefabs.Length)];
+
             //Spawn the ring prefab at the position of the randomly selected 
             //spawn point, with the rotation of said spawn point
             Instantiate(ringPrefab, spawnPoints[randomIndex].transform.position,

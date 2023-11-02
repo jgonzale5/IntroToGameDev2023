@@ -52,26 +52,32 @@ public class ScoreRingScript : MonoBehaviour
                 anim.Spin();
             }
 
-            //Add 10 points to score manager, which will display the new score
-            ScoreManager.Instance.AddScore(10);
-
-            //Spawn a ring explosion at the position of this object, with its
-            //same rotation.
-            Instantiate(ringExplosion, 
-                this.transform.position, 
-                this.transform.rotation,
-                this.transform);
-
-            //We destroy this object
-            //Destroy(this.gameObject);
-
-            //Instead of destroying this object, we're going to hide the ring
-            //and the collider so the player thinks it's destroyed.
-            ringMesh.SetActive(false);
-            ringCollider.enabled = false;
-
-            //Tell the player to play the sound assigned to its "clip" variable
-            ringSoundPlayer.Play();
+            Score();
         }
+    }
+
+    //We make a public function that tells this script what to do whent it's triggered.
+    public void Score()
+    {
+        //Add 10 points to score manager, which will display the new score
+        ScoreManager.Instance.AddScore(10);
+
+        //Spawn a ring explosion at the position of this object, with its
+        //same rotation.
+        Instantiate(ringExplosion,
+            this.transform.position,
+            this.transform.rotation,
+            this.transform);
+
+        //We destroy this object
+        //Destroy(this.gameObject);
+
+        //Instead of destroying this object, we're going to hide the ring
+        //and the collider so the player thinks it's destroyed.
+        ringMesh.SetActive(false);
+        ringCollider.enabled = false;
+
+        //Tell the player to play the sound assigned to its "clip" variable
+        ringSoundPlayer.Play();
     }
 }

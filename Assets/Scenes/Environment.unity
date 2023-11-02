@@ -776,7 +776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f625c1c8036c33d4196df6e7f3f2f47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringPrefab: {fileID: 7558862841741745852, guid: 47168c49097780c40bf3b44c505dffe5, type: 3}
+  ringPrefabs:
+  - {fileID: 8866745615373667798, guid: 1b76adbd173c0c34d83bfcd240e78163, type: 3}
+  - {fileID: 7558862841741745852, guid: 47168c49097780c40bf3b44c505dffe5, type: 3}
   spawnPoints:
   - {fileID: 1006550912}
   - {fileID: 1382250938}
@@ -797,7 +799,7 @@ GameObject:
   - component: {fileID: 733444108}
   - component: {fileID: 733444107}
   - component: {fileID: 733444106}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,6 +1357,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a65278ec727ee514fb29afa6fbc19ec6, type: 3}
       propertyPath: m_Name
       value: ship1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a65278ec727ee514fb29afa6fbc19ec6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a65278ec727ee514fb29afa6fbc19ec6, type: 3}
       propertyPath: m_TagString
@@ -1939,7 +1945,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1342227540}
   - component: {fileID: 1342227539}
-  m_Layer: 0
+  - component: {fileID: 1342227541}
+  m_Layer: 3
   m_Name: Muzzle Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,6 +1983,22 @@ Transform:
   m_Father: {fileID: 914512457}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342227541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342227538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0da2ec55358e2428085632be7da489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumLength: 20
+  mask:
+    serializedVersion: 2
+    m_Bits: 119
 --- !u!1 &1372243236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2941,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1836515550}
   - component: {fileID: 1836515549}
-  m_Layer: 0
+  - component: {fileID: 1836515551}
+  m_Layer: 3
   m_Name: Muzzle Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2955,6 +2979,22 @@ Transform:
   m_Father: {fileID: 914512457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1836515551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836515548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0da2ec55358e2428085632be7da489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumLength: 20
+  mask:
+    serializedVersion: 2
+    m_Bits: 119
 --- !u!1 &1864883452
 GameObject:
   m_ObjectHideFlags: 0
